@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES } from '../../../../utils'
-import { changeLanguageApp } from '../../../../store/actions'
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { set } from 'lodash';
 import './NewProduct.scss'
 import NP_product1 from '../../../../assets/new_products/shopping (1).webp'
 class NewProduct extends Component {
@@ -26,7 +22,7 @@ class NewProduct extends Component {
                         <Slider {...settings}>
                             <div className='section-customize'>
                                 <div className="bg-image">
-                                    <img src={NP_product1} style={{}} />
+                                    <img alt="" src={NP_product1} style={{}} />
                                 </div>
                                 <label className='moiramat' >Mới ra mắt</label>
                                 <h3>iPhone 15 Pro Max 256G Titan Trắng </h3>
@@ -51,7 +47,7 @@ class NewProduct extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image section-NewProduct">
-                                    <img src={NP_product1} style={{}} />
+                                    <img alt="" src={NP_product1} style={{}} />
                                 </div>
                                 <label className='moiramat' >Mới ra mắt</label>
                                 <h3>iPhone 15 Pro Max 256G Titan Trắng </h3>
@@ -76,7 +72,7 @@ class NewProduct extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image section-NewProduct">
-                                    <img src={NP_product1} style={{}} />
+                                    <img alt="" src={NP_product1} style={{}} />
                                 </div>
                                 <label className='moiramat' >Mới ra mắt</label>
                                 <h3>iPhone 15 Pro Max 256G Titan Trắng </h3>
@@ -101,7 +97,7 @@ class NewProduct extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image section-NewProduct">
-                                    <img src={NP_product1} style={{}} />
+                                    <img alt="" src={NP_product1} style={{}} />
                                 </div>
                                 <label className='moiramat' >Mới ra mắt</label>
                                 <h3>iPhone 15 Pro Max 256G Titan Trắng </h3>
@@ -126,7 +122,7 @@ class NewProduct extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image section-NewProduct">
-                                    <img src={NP_product1} style={{}} />
+                                    <img alt="" src={NP_product1} style={{}} />
                                 </div>
                                 <label className='moiramat' >Mới ra mắt</label>
                                 <h3>iPhone 15 Pro Max 256G Titan Trắng </h3>
@@ -151,7 +147,7 @@ class NewProduct extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image section-NewProduct">
-                                    <img src={NP_product1} style={{}} />
+                                    <img alt="" src={NP_product1} style={{}} />
                                 </div>
                                 <label className='moiramat' >Mới ra mắt</label>
                                 <h3>iPhone 15 Pro Max 256G Titan Trắng </h3>
@@ -176,7 +172,7 @@ class NewProduct extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image section-NewProduct">
-                                    <img src={NP_product1} style={{}} />
+                                    <img alt="" src={NP_product1} style={{}} />
                                 </div>
                                 <label className='moiramat' >Mới ra mắt</label>
                                 <h3>iPhone 15 Pro Max 256G Titan Trắng </h3>

@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 
 import './Navigator.scss';
@@ -12,7 +11,7 @@ class MenuGroup extends Component {
         return (
             <li className="menu-group">
                 <div className="menu-group-name">
-                    <FormattedMessage id={name} />
+                    {name}
                 </div>
                 <ul className="menu-list list-unstyled">
                     {children}
@@ -36,7 +35,7 @@ class Menu extends Component {
                             onClick={onClick}
                             aria-expanded={"false"}
                         >
-                            <FormattedMessage id={name} />
+                            {name}
                             <div className="icon-right">
                                 <i className={"far fa-angle-right"} />
                             </div>
@@ -49,7 +48,7 @@ class Menu extends Component {
                     </Fragment>
                 ) : (
                     <Link to={link} className="menu-link" onClick={onLinkClick}>
-                        <FormattedMessage id={name} />
+                        {name}
                     </Link>
                 )}
             </li>
@@ -68,7 +67,7 @@ class SubMenu extends Component {
         return (
             <li className={"sub-menu " + this.getItemClass(link)}>
                 <Link to={link} className="sub-menu-link" onClick={onLinkClick}>
-                    <FormattedMessage id={name} />
+                    {name}
                 </Link>
             </li>
         );

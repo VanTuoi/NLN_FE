@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES } from '../../../../utils'
-import { changeLanguageApp } from '../../../../store/actions'
 import Slider from "react-slick";
-// import './MostOutStanding.scss';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { set } from 'lodash';
 
 import './MostOutStanding.scss'
 import { withRouter } from 'react-router';
@@ -32,7 +27,7 @@ class MostOutStanding extends Component {
                         <Slider {...settings}>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={MOS_product_1} style={{}} />
+                                    <img alt="" src={MOS_product_1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 1000đ</label>
                                 <h3 onClick={() => this.handleViewDetailProduct()}>iPhone 15 128GB </h3>
@@ -56,7 +51,7 @@ class MostOutStanding extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image">
-                                    <img src={MOS_product_1} style={{}} />
+                                    <img alt="" src={MOS_product_1} style={{}} />
                                 </div>
                                 <label className='giareonline' >Giá rẻ online</label>
                                 <h3 onClick={() => this.handleViewDetailProduct()}>Huawei Nova 2i </h3>
@@ -80,7 +75,7 @@ class MostOutStanding extends Component {
                                 {/* <div className='section-content'>Sản phẩm  2</div> */}
                             </div>
                             <div className='section-customize'>
-                                <div className="bg-image "> <img src={MOS_product_1} style={{}} /></div>
+                                <div className="bg-image "> <img alt="" src={MOS_product_1} style={{}} /></div>
                                 <label className='moiramat' >Mới ra mắt</label>
                                 <h3 onClick={() => this.handleViewDetailProduct()}>Xiaomi Redmi 5 Plus 4GB </h3>
                                 <div className='price'>
@@ -103,7 +98,7 @@ class MostOutStanding extends Component {
                                 {/* <div className='section-content'>Sản phẩm  3</div> */}
                             </div>
                             <div className='section-customize'>
-                                <div className="bg-image "> <img src={MOS_product_1} style={{}} /></div>
+                                <div className="bg-image "> <img alt="" src={MOS_product_1} style={{}} /></div>
                                 {/* <div className='section-content'>Sản phẩm  4</div> */}
                                 <h3 onClick={() => this.handleViewDetailProduct()}>Xiaomi Redmi 5</h3>
                                 <div className='price'>
@@ -126,7 +121,7 @@ class MostOutStanding extends Component {
                             </div>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={MOS_product_1} style={{}} />
+                                    <img alt="" src={MOS_product_1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 1000đ</label>
                                 <h3 onClick={() => this.handleViewDetailProduct()}>iPhone 15 128GB </h3>
@@ -150,7 +145,7 @@ class MostOutStanding extends Component {
                             </div>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={MOS_product_1} style={{}} />
+                                    <img alt="" src={MOS_product_1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 1000đ</label>
                                 <h3 onClick={() => this.handleViewDetailProduct()}>iPhone 15 128GB </h3>
@@ -174,7 +169,7 @@ class MostOutStanding extends Component {
                             </div>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={MOS_product_1} style={{}} />
+                                    <img alt="" src={MOS_product_1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 1000đ</label>
                                 <h3 onClick={() => this.handleViewDetailProduct()}>iPhone 15 128GB </h3>

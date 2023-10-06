@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { Redirect } from 'react-router-dom';
 import HomeHeader from '../HomePage/HomeHeader';
 import './DetailProduct.scss'
 
@@ -9,34 +8,62 @@ class DetailProduct extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            nameProduct: 'Điện thoại Huawei Nova 3i',
-            img: 'https://i.pinimg.com/originals/27/64/24/27642437def745f6a4fd097f735e48df.jpg',
-            codeProduct: '123',
-            price: 6000000,
-            old_price: 5000000,
-            screen: 'IPS LCD 6.56" HD+',
-            operatingSystem: 'Android 7.0 (Nougat)',
-            CPU: 'A15',
-            RAM: '8GB',
-            ROM: '128GB',
-            color: 'red',
-            frontCamera: '8 MP',
-            rearCamera: '16MP',
-            SIM: '2 Nano SIM, Hỗ trợ 4G',
-            battery: '5000 mAh',
-            charger: '33Wh',
+
+            phone: {
+                name: 'SamSung',
+                code: '',
+                price: 100,
+                mainImage: 'https://cdn.tgdd.vn/Products/Images/42/307556/xiaomi-redmi-12-bac-thumb-600x600.jpg',
+                brandName: '',
+                categoryName: '',
+                detail: {
+                    screen: 'IPS LCD 6.56" HD+',
+                    CPU: 'A15',
+                    RAM: '',
+                    frontCamera: '',
+                    rearCamera: '',
+                    SIM: '',
+                    battery: '',
+                    charger: '33Wh',
+                    size: '',
+                    weight: '',
+                    material: '',
+                },
+                option: [
+                    {
+                        color: "Red",
+                        capacity: '128GB',
+                        additionalPrice: 10,
+                        quantity: 10
+                    },
+                    {
+                        color: "Yellow",
+                        capacity: '128GB',
+                        additionalPrice: 20,
+                        quantity: 10
+                    },
+                ]
+            },
+            selectColor: '',
 
             commnet: [
-                { id: '1', name: 'Trần Văn Khá', content: 'Sản phẩm tốt', time: '1 ngày trước' },
+                { id: '1', name: 'Trần Văn Khá', content: 'Cho mình hỏi,nếu mình dùng sạch 67w thì có ảnh hưởng gì với note12 này không an', time: '1 ngày trước' },
                 { id: '1', name: 'Trần Văn Bảnh', content: 'Sản phẩm rất oke sẽ giới thiệu cho mn', time: '2 ngày trước' },
-                { id: '1', name: 'Trần Văn Thật', content: 'Khá tốt', time: '3 ngày trước' },
-                { id: '1', name: 'Trần Văn Thật', content: 'Khá tốt', time: '3 ngày trước' },
+                { id: '1', name: 'Trần Văn Thật', content: 'Lướt web cũng bị lôi nữa vậy có gọi 1 đổi 1kg ', time: '3 ngày trước' },
+                { id: '1', name: 'Trần Văn Thật', content: 'Mạng bắt yếu, các ảnh, video trong thư viện ảnh muốn chỉnh của phải tải trình cắm gì đó của điện thoại về mà tải không được', time: '3 ngày trước' },
                 { id: '1', name: 'Trần Văn Thật', content: 'Khá tốt', time: '3 ngày trước' },
                 { id: '1', name: 'Trần Văn Thật', content: 'Khá tốt', time: '3 ngày trước' },
                 { id: '1', name: 'Trần Văn Thật', content: 'Khá tốt', time: '3 ngày trước' },
             ],
-            commentUser: '',
+            textUserComment: '',
+            nameUserComment: '',
+            phoneUserComment: '',
         }
+    }
+    handleSelectColor = (color) => {
+        this.setState({
+            selectColor: color
+        })
     }
     onChangeInput = (event, id) => {
         let copyState = { ...this.state };
@@ -51,13 +78,16 @@ class DetailProduct extends Component {
     commnetProductService = (productId) => {
         console.log(productId);
     }
+    handleSentCommnent = () => {
+        // API
+    }
+    handleAddOrder = () => {
+        // API
+    }
     render() {
-        const { isLoggedIn } = this.props;
-        let { nameProduct, codeProduct, price, old_price, screen, operatingSystem, CPU, RAM, ROM,
-            color, frontCamera, rearCamera, battery, SIM,
-            charger, commnet, commentUser
-        } = this.state
-        console.log('DetailProduct')
+        // const { isLoggedIn } = this.props;
+        let { phone, commnet, selectColor, textUserComment, nameUserComment, phoneUserComment } = this.state
+        console.log(phone)
         return (
             <>
                 <HomeHeader
@@ -66,22 +96,23 @@ class DetailProduct extends Component {
                 <div className='product-detail-container'>
                     <div className='row title-product'>
                         <div className='col-12 '>
-                            <div className='text-left'>{nameProduct}</div>
+                            <div className='text-left'>{phone.name}</div>
                         </div>
                     </div>
                     <div className='row product'>
                         <div className='col-4 mt-3 text-center img-product'>
                             <img
+                                alt='img phone'
                                 style={{ width: '350px' }}
-                                src='https://i.pinimg.com/originals/27/64/24/27642437def745f6a4fd097f735e48df.jpg'></img>
+                                src={phone.mainImage}></img>
                         </div>
                         <div className='col-4 mt-5 pr-5 price-products text-bottom'>
                             <div className='row'>
                                 <div className='col-4 price-new'>
-                                    {price}đ
+                                    {phone.price}đ
                                 </div>
                                 <div className='col-4 price-old mt-1'>
-                                    {old_price}đ
+                                    {phone.price}đ
                                 </div>
                             </div>
                             <div className='row mt-5 border-item'>
@@ -107,7 +138,7 @@ class DetailProduct extends Component {
                             <div className='row mt-5'>
                                 <div className='col-12 text-center'>
                                     <button
-                                        onClick={() => this.orderService(codeProduct)}
+                                        onClick={() => this.handleAddOrder(phone.code)}
                                         className='btn col-8 btn-lg btn-warning'
                                     >
                                         Thêm vào giỏ hàng
@@ -115,95 +146,136 @@ class DetailProduct extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-4 infor-product mt-1'>
-                            <div className='row'>
+                        <div className='col-4 mt-1'>
+                            <div className='row col-11 select-option'>
+                                {phone.option.map((item, index) => {
+                                    return (
+                                        <>
+                                            <div
+                                                className={item.color !== selectColor ? 'option m-1' : 'option_select m-1'}
+                                                onClick={() => this.handleSelectColor(item.color)}
+                                            >
+                                                <p className='m-2'>{item.color}</p>
+                                            </div>
+                                        </>
+                                    )
+                                })}
+
+                            </div>
+                            <div className='row col-11 infor-product'>
+
                                 <div className='col-12 detail text-center'>
                                     Thống số kỹ thuật
                                 </div>
                                 <div className='col-12 configuration'>
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>Màn hình</div>
-                                        <div className='col-7'>{screen}</div>
+                                        <div className='col-7'>{phone.detail.screen}</div>
                                     </div>
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>Hệ điều hành:</div>
-                                        <div className='col-7'>{operatingSystem}</div>
+                                        <div className='col-7'>{phone.detail.categoryName}</div>
                                     </div>
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>CPU:</div>
-                                        <div className='col-7'>{CPU}</div>
+                                        <div className='col-7'>{phone.detail.CPU}</div>
                                     </div>
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>RAM:</div>
-                                        <div className='col-7'>{RAM}</div>
+                                        <div className='col-7'>{phone.detail.RAM}</div>
                                     </div>
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>ROM:</div>
-                                        <div className='col-7'>{ROM}</div>
+                                        {/* <div className='col-7'>{ROM}</div> */}
                                     </div>
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>Camera sau:</div>
-                                        <div className='col-7'>{rearCamera}</div>
+                                        <div className='col-7'>{phone.detail.rearCamera}</div>
                                     </div>
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>Camera trước:</div>
-                                        <div className='col-7'>{frontCamera}</div>
+                                        <div className='col-7'>{phone.detail.frontCamera}</div>
                                     </div>
 
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>SIM:</div>
-                                        <div className='col-7'>{SIM}</div>
+                                        <div className='col-7'>{phone.detail.SIM}</div>
                                     </div>
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>Pin:</div>
-                                        <div className='col-7'>{battery}</div>
+                                        <div className='col-7'>{phone.detail.battery}</div>
                                     </div>
                                     <div className='row mt-2 configuration-item'>
                                         <div className='col-5'>Xạc:</div>
-                                        <div className='col-7'>{charger}</div>
+                                        <div className='col-7'>{phone.detail.charger}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className='row mt-5 comment'>
-                        <div className='col-4 text-center title-comment'>
+                    <div className='row mt-5 comment '>
+                        <div className='col-12 text-center title-comment'>
                             Bình luận về sản phẩm
                         </div>
-                        <div className='col-8'></div>
-                        <div className='col-4'>
+                        <div className='col-2'></div>
+                        <div className='col-8 box-comment'>
+                            <div className='m-3 text-center'>
+                                <textarea
+                                    className='form-control my-comment'
+                                    value={textUserComment}
+                                    rows={4}
+                                    placeholder='Mời bạn để lại bình luận'
+                                    onChange={(event) => this.onChangeInput(event, 'textUserComment')}
+                                >
+                                </textarea>
+                                <div className='row'>
+                                    {textUserComment !== '' ?
+                                        <>
+                                            <input
+                                                value={nameUserComment}
+                                                className='form-control col-4 m-3'
+                                                placeholder='Họ và tên'
+                                                onChange={(event) => this.onChangeInput(event, 'nameUserComment')}
+                                            ></input>
+                                            <input
+                                                value={phoneUserComment}
+                                                className='form-control col-4 m-3'
+                                                placeholder='Số điện thoại'
+                                                onChange={(event) => this.onChangeInput(event, 'phoneUserComment')}
+                                            ></input>
+                                            <button
+                                                className='btn btn-warning col-2 m-3 text-center'
+                                                disabled={nameUserComment === '' ? true : phoneUserComment === '' ? true : false}
+                                                onClick={() => this.handleSentCommnent()}
+                                            >
+                                                Gửi bình luận
+                                            </button>
+                                        </>
+                                        : <></>
+                                    }
+                                </div>
+
+                            </div>
                             <div className='row list-comment'>
                                 {commnet && commnet.length > 0 && commnet.map((item, index) => {
                                     return (
                                         <>
                                             <div key={index} className='col-12 comment-item'>
-                                                <div className='row'>
+                                                <div className='row m-3'>
                                                     <div className='col-12 font-weight-bold'>{item.name}</div>
-                                                    <div className='col-12 ml-2'>{item.content}</div>
-                                                    <div className='col-12 ml-2 time'>{item.time}</div>
+                                                    <div className='col-12 mt-2 ml-2'>{item.content}</div>
+                                                    <div className='col-12 time ml-2'>{item.time}</div>
                                                 </div>
                                             </div>
                                         </>
                                     )
                                 })
                                 }
-
                             </div>
                         </div>
-                        <div className='col-8'></div>
-                        <div className='col-4 p-3 text-center'>
-                            <textarea
-                                className='form-control'
-                                value={commentUser}
-                                rows={5}
-                                placeholder='Mời bạn để lại bình luận'
-                                onChange={(event) => this.onChangeInput(event, 'commentUser')}
-                            >
-                            </textarea>
-                            <button className='btn btn-success mt-2 text-center'>Gửi bình luận</button>
-                        </div>
+                        <div className='col-2'></div>
                     </div>
-                </div>
+                </div >
             </>
         );
     }

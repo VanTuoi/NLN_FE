@@ -4,11 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import { history } from '../redux'
 import { ToastContainer } from 'react-toastify';
-import CustomScrollbars from '../components/CustomScrollbars.js'
+import { Scrollbars } from 'react-custom-scrollbars';
 
-import { userIsAuthenticated, userIsNotAuthenticated, userIsAdmin, userIsNotAdmin, userIsAuthenticatedRedirect } from '../hoc/authentication';
-
-import { path } from '../utils'
+import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
 
 import Home from '../routes/Home';
 import Admin from '../routes/Admin';
@@ -41,15 +39,15 @@ class App extends Component {
                 <Router history={history}>
                     <div className="main-container">
                         <div className="content-container">
-                            <CustomScrollbars style={{ height: '100vh', width: '100%' }}>
+                            <Scrollbars style={{ height: '100vh', width: '100%' }}>
                                 <Switch>
                                     {/* <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} /> */}
                                     <Route path={'/login'} exact component={(Login)} />
                                     <Route path={'/register'} exact component={(Register)} />
-                                    <Route path={'/admin'} component={(Admin)} />   {/* admin */}
+                                    <Route path={'/admin'} component={(Admin)} />
                                     <Route path={'/home'} component={(Home)} />
                                 </Switch>
-                            </CustomScrollbars>
+                            </Scrollbars>
                         </div>
                         <ToastContainer
                             position='bottom-right'

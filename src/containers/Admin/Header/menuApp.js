@@ -1,81 +1,81 @@
 export const adminMenu = [
     { //quan ly nguoi dung
-        name: 'menu.admin.overview',
+        name: 'Tổng quan',
         menus: [
             {
-                name: 'menu.admin.overview', link: '/admin/overview'
+                name: 'Tổng quan', link: '/admin/overview'
             },
         ]
     },
     { //quan ly nguoi dung
-        name: 'menu.admin.user',
+        name: 'Người dùng',
         menus: [
             {
-                name: 'menu.admin.manage-user', link: '/admin/user-manage'
+                name: 'Quản lý người dùng', link: '/admin/user-manage'
             },
         ]
     },
     {   // quan ly san pham
-        name: 'menu.admin.product',
+        name: 'Sản phẩm',
         menus: [
             {
-                name: 'menu.admin.manage-product', link: '/admin/manage-product'
+                name: 'Quản lý sản phẩm', link: '/admin/manage-product'
             },
         ]
     },
     {   // quan ly trang chu
-        name: 'menu.admin.home-page',
+        name: 'Trang chủ',
         menus: [
             {
-                name: 'menu.admin.manage-banner', link: '/admin/manage-banner'
+                name: 'Quản lý quảng cáo', link: '/admin/manage-banner'
             },
             {
-                name: 'menu.admin.manage-product-framework', link: '/admin/manage-product-framework'
+                name: 'Quản lý khung sản phẩm', link: '/admin/manage-product-framework'
             }
         ]
     },
     {
         // quan ly khuyem mai
-        name: 'menu.admin.promotion',
+        name: 'Khuyến mãi',
         menus: [
             {
-                name: 'menu.admin.promotion-trademark', link: '/admin/promotion-trademark'
+                name: 'Khuyến mãi theo hãng', link: '/admin/promotion-trademark'
             },
             {
-                name: 'menu.admin.promotion-product', link: '/admin/promotion-product'
+                name: 'Khuyến mãi theo sản phẩm', link: '/admin/promotion-product'
             }
         ]
     },
     {
         // quan ly don hang
-        name: 'menu.admin.manage-order',
+        name: 'Đơn hàng',
         menus: [
             {
-                name: 'menu.admin.approve-order', link: '/admin/approve-order'
+                name: 'Duyệt đơn', link: '/admin/approve-order'
             },
             {
-                name: 'menu.admin.look-up-order', link: '/admin/look-up-order'
+                name: 'Quản lý đơn', link: '/admin/look-up-order'
             }
         ]
     },
     {
         // quan ly nhap hang
-        name: 'menu.admin.manage-import-goods',
+        name: 'Nhập hàng',
         menus: [
             {
-                name: 'menu.admin.import-goods', link: '/admin/import-goods'
+                name: 'Nhập hàng', link: '/admin/import-goods'
             },
             {
-                name: 'menu.admin.look-up-goods', link: '/admin/look-up-goods'
+                name: 'Quản lý nhập hàng', link: '/admin/look-up-goods'
             }
         ]
     },
     {
         // quan ly doanh thu
-        name: 'menu.admin.statistical',
+        name: 'Doanh thu',
         menus: [
             {
-                name: 'menu.admin.sales-statistics', link: '/admin/sales-statistics'
+                name: 'Doanh thu', link: '/admin/sales-statistics'
             }
         ]
     }

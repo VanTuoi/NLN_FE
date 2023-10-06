@@ -41,9 +41,39 @@
 
         }
 
+        .select-option {
+            .option {
+                border       : 2px solid gray;
+                border-radius: 3px;
+                cursor       : pointer;
+                display      : inline-block;
+                align-items  : center;
+
+                p {
+                    height     : 100%;
+                    white-space: nowrap;
+                }
+            }
+
+            .option_select {
+                border       : 2px solid rgb(255, 187, 0);
+                border-radius: 3px;
+                cursor       : pointer;
+                display      : inline-block;
+                align-items  : center;
+
+                p {
+                    height     : 100%;
+                    white-space: nowrap;
+                }
+            }
+        }
+
         .infor-product {
             border-radius: 3px;
             border       : 1px solid rgb(183, 179, 179);
+
+
 
             .detail {
                 font-size  : 20px;
@@ -67,6 +97,14 @@
 
     .comment {
 
+        .box-comment {
+            border-radius: 5px;
+            border       : 1px solid rgb(219, 213, 213);
+
+            .my-comment {
+                border-radius: 10px;
+            }
+        }
 
         .title-comment {
             font-size  : 22px;
@@ -75,8 +113,7 @@
         }
 
         .list-comment {
-            border-radius: 2px;
-            border       : 1px solid rgb(183, 179, 179);
+
 
             .comment-item {
                 .time {

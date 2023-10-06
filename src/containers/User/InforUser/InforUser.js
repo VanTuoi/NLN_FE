@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { Redirect } from 'react-router-dom';
 import HomeHeader from '../HomePage/HomeHeader';
 import './InforUser.scss'
 
@@ -11,7 +10,7 @@ class InforUser extends Component {
         element.classList.toggle('hidden');
     }
     render() {
-        const { isLoggedIn } = this.props;
+        // const { isLoggedIn } = this.props;
         return (
             <>
                 <HomeHeader
@@ -160,9 +159,9 @@ class InforUser extends Component {
                             <tr>
                                 <td>1</td>
                                 <td className='noPadding imgHide'>
-                                    <a target='_blank' href='' title='Xem chi tiết'>
+                                    <a target='_blank' href='#' title='Xem chi tiết'>
                                         Nokia black future
-                                        <img src='	https://cdn.tgdd.vn/Products/Images/42/22701/dien-thoai-di-dong-Nokia-1280-dienmay.com-l.jpg' />
+                                        <img alt='' src='	https://cdn.tgdd.vn/Products/Images/42/22701/dien-thoai-di-dong-Nokia-1280-dienmay.com-l.jpg' />
                                     </a>
                                 </td>
                                 <td className='alignRight'>999.999.000 đ</td>

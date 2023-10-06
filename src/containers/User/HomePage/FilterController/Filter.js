@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES } from '../../../../utils'
-import { changeLanguageApp } from '../../../../store/actions'
 
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { set } from 'lodash';
 import './Filter.scss'
 import imageblackFriday from '../../../../assets/Banners/blackFriday.gif'
 import company_Apple from '../../../../assets/Companys/Apple.jpg'
@@ -39,52 +34,52 @@ class Filter extends Component {
                 </div>
                 <div className='child-container-bottom group flexContain'>
                     <a href='#'>
-                        <img src={company_Apple}></img>
+                        <img alt=" " src={company_Apple}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Samsung}></img>
+                        <img alt=" " src={company_Samsung}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Oppo}></img>
+                        <img alt=" " src={company_Oppo}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Noki}></img>
+                        <img alt=" " src={company_Noki}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Huawei}></img>
+                        <img alt=" " src={company_Huawei}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Apple}></img>
+                        <img alt=" " src={company_Apple}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Xixaomi}></img>
+                        <img alt=" " src={company_Xixaomi}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Realme}></img>
+                        <img alt=" " src={company_Realme}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Vivo}></img>
+                        <img alt=" " src={company_Vivo}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Philips}></img>
+                        <img alt=" " src={company_Philips}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Mobell}></img>
+                        <img alt=" " src={company_Mobell}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Mobiistar}></img>
+                        <img alt=" " src={company_Mobiistar}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Itel}></img>
+                        <img alt=" " src={company_Itel}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Coolpad}></img>
+                        <img alt=" " src={company_Coolpad}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_HTC}></img>
+                        <img alt=" " src={company_HTC}></img>
                     </a>
                     <a href='#'>
-                        <img src={company_Motorola}></img>
+                        <img alt=" " src={company_Motorola}></img>
                     </a>
 
                 </div>

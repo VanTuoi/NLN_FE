@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
+
 import { connect } from 'react-redux';
-import * as actions from "../../store/actions";
-import { LANGUAGES, CRUD_ACTIONS } from '../../utils'
 import './ManageUser.scss'
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-import TableManageUser from './TableManageUser';
-import Select from "react-select"
 import { Form } from 'react-bootstrap';
 import { Bar, Pie } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
 import './Overview.scss'
 class Overview extends Component {
 
@@ -65,22 +60,9 @@ class Overview extends Component {
 
 
     async componentDidMount() {
-        this.props.getSaleOverTime(this.state.timeSales);
-        this.props.getRevenueOverTime(this.state.timeRevenue);
-
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.sales !== this.props.sales) {
-            this.setState({
-                sales: this.props.sales,
-            })
-        }
-        if (prevProps.revenue !== this.props.revenue) {
-            this.setState({
-                revenue: this.props.revenue,
-            })
-        }
     }
     handleChangeTimeSales = (event) => {
         this.setState({
@@ -266,17 +248,11 @@ class Overview extends Component {
 
 const mapStateToProps = state => {
     return {
-        language: state.app.language,
-        // sales: state.admin.sales,                // chưa có API
-        // revenue: state.admin.revenue
-
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getSaleOverTime: (time) => dispatch(actions.getSaleOverTime(time)),
-        getRevenueOverTime: (time) => dispatch(actions.getRevenueOverTime(time))
     };
 };
 

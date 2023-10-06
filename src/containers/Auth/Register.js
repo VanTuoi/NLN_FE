@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from "connected-react-router";
-import * as actions from "../../store/actions";
 import './Register.scss';
-import { FormattedMessage } from 'react-intl';
-import { RegisterService } from '../../services/userService'
-import { toast } from 'react-toastify';
 
 class Register extends Component {
 

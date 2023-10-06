@@ -7,14 +7,6 @@ const initialState = {
 
 const appReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.USER_REGISTER_SUCCESS:
-            return {
-                ...state,
-            }
-        case actionTypes.USER_REGISTER_FAIL:
-            return {
-                ...state,
-            }
         case actionTypes.USER_LOGIN_SUCCESS:
             return {
                 ...state,
@@ -34,10 +26,6 @@ const appReducer = (state = initialState, action) => {
                 isLoggedIn: false,
                 userInfo: null
             }
-
-
-
-
         default:
             return state;
     }

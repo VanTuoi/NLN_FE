@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES } from '../../../../utils'
-import { changeLanguageApp } from '../../../../store/actions'
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { set } from 'lodash';
 import './ZeroPercentInstallmentPayment.scss';
 import ZPIP_product1 from '../../../../assets/ZeroPercentInstallmentPayment_products/iphone_15.webp'
 class ZeroPercentInstallmentPayment extends Component {
@@ -26,7 +22,7 @@ class ZeroPercentInstallmentPayment extends Component {
                         <Slider {...settings}>
                             <div className='section-customize'>
                                 <div className="bg-image">
-                                    <img src={ZPIP_product1} style={{}} />
+                                    <img alt="" src={ZPIP_product1} style={{}} />
                                 </div>
                                 <label className='tragop' >Trả góp 0%</label>
                                 <h3>iPhone 15 128GB Đen</h3>
@@ -51,7 +47,7 @@ class ZeroPercentInstallmentPayment extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image">
-                                    <img src={ZPIP_product1} style={{}} />
+                                    <img alt="" src={ZPIP_product1} style={{}} />
                                 </div>
                                 <label className='tragop' >Trả góp 0%</label>
                                 <h3>iPhone 15 128GB Đen</h3>
@@ -76,7 +72,7 @@ class ZeroPercentInstallmentPayment extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image">
-                                    <img src={ZPIP_product1} style={{}} />
+                                    <img alt="" src={ZPIP_product1} style={{}} />
                                 </div>
                                 <label className='tragop' >Trả góp 0%</label>
                                 <h3>iPhone 15 128GB Đen</h3>
@@ -101,7 +97,7 @@ class ZeroPercentInstallmentPayment extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image">
-                                    <img src={ZPIP_product1} style={{}} />
+                                    <img alt="" src={ZPIP_product1} style={{}} />
                                 </div>
                                 <label className='tragop' >Trả góp 0%</label>
                                 <h3>iPhone 15 128GB Đen</h3>
@@ -126,7 +122,7 @@ class ZeroPercentInstallmentPayment extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image">
-                                    <img src={ZPIP_product1} style={{}} />
+                                    <img alt="" src={ZPIP_product1} style={{}} />
                                 </div>
                                 <label className='tragop' >Trả góp 0%</label>
                                 <h3>iPhone 15 128GB Đen</h3>
@@ -151,7 +147,7 @@ class ZeroPercentInstallmentPayment extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image">
-                                    <img src={ZPIP_product1} style={{}} />
+                                    <img alt="" src={ZPIP_product1} style={{}} />
                                 </div>
                                 <label className='tragop' >Trả góp 0%</label>
                                 <h3>iPhone 15 128GB Đen</h3>
@@ -176,7 +172,7 @@ class ZeroPercentInstallmentPayment extends Component {
                             </div>
                             <div className='section-customize'>
                                 <div className="bg-image">
-                                    <img src={ZPIP_product1} style={{}} />
+                                    <img alt="" src={ZPIP_product1} style={{}} />
                                 </div>
                                 <label className='tragop' >Trả góp 0%</label>
                                 <h3>iPhone 15 128GB Đen</h3>

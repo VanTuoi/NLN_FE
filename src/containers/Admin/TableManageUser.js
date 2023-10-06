@@ -34,14 +34,8 @@ class TableManageUser extends Component {
         this.props.fetchUserRedux();
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.list !== this.props.list) {
-            this.setState({
-                list: this.props.list
-            })
-        }
     }
     handleEidtUser = (user) => {
-        this.props.handleEditUser(user);
     }
     openPreviewImage = () => {
         if (!this.state.previewImageURL) return;
@@ -94,23 +88,18 @@ class TableManageUser extends Component {
                         }
                     </tbody>
                 </table>
-                {/* <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} /> */}
             </>
-
         )
     }
 }
 
 const mapStateToProps = state => {
     return {
-        list: state.admin.users
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchUserRedux: () => dispatch(actions.getAllUser()),
-        deleteUserRedux: (id) => dispatch(actions.deleteUser(id))
     };
 };
 

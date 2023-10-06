@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES } from '../../../../utils'
-import { changeLanguageApp } from '../../../../store/actions'
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { set } from 'lodash';
 import './BigSaleOff.scss';
 import BSO_product1 from '../../../../assets/BigSaleOff_products/Sumsung-Galaxy-Z-Flip.webp'
 class BigSaleOff extends Component {
@@ -26,7 +22,7 @@ class BigSaleOff extends Component {
                         <Slider {...settings}>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={BSO_product1} style={{}} />
+                                    <img alt="" src={BSO_product1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 999.000đ</label>
                                 <h3>Samsung Galaxy Z Flip4 5G 128GB</h3>
@@ -50,7 +46,7 @@ class BigSaleOff extends Component {
                             </div>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={BSO_product1} style={{}} />
+                                    <img alt="" src={BSO_product1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 999.000đ</label>
                                 <h3>Samsung Galaxy Z Flip4 5G 128GB</h3>
@@ -74,7 +70,7 @@ class BigSaleOff extends Component {
                             </div>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={BSO_product1} style={{}} />
+                                    <img alt="" src={BSO_product1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 999.000đ</label>
                                 <h3>Samsung Galaxy Z Flip4 5G 128GB</h3>
@@ -98,7 +94,7 @@ class BigSaleOff extends Component {
                             </div>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={BSO_product1} style={{}} />
+                                    <img alt="" src={BSO_product1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 999.000đ</label>
                                 <h3>Samsung Galaxy Z Flip4 5G 128GB</h3>
@@ -122,7 +118,7 @@ class BigSaleOff extends Component {
                             </div>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={BSO_product1} style={{}} />
+                                    <img alt="" src={BSO_product1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 999.000đ</label>
                                 <h3>Samsung Galaxy Z Flip4 5G 128GB</h3>
@@ -146,7 +142,7 @@ class BigSaleOff extends Component {
                             </div>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={BSO_product1} style={{}} />
+                                    <img alt="" src={BSO_product1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 999.000đ</label>
                                 <h3>Samsung Galaxy Z Flip4 5G 128GB</h3>
@@ -170,7 +166,7 @@ class BigSaleOff extends Component {
                             </div>
                             <div className='section-customize '>
                                 <div className="bg-image ">
-                                    <img src={BSO_product1} style={{}} />
+                                    <img alt="" src={BSO_product1} style={{}} />
                                 </div>
                                 <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 999.000đ</label>
                                 <h3>Samsung Galaxy Z Flip4 5G 128GB</h3>

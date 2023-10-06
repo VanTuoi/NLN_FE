@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES } from '../../../utils'
-import { changeLanguageApp } from '../../../store/actions'
 import { withRouter } from 'react-router';
 import * as actions from "../../../store/actions";
 import logo from '../../../assets/logo/PhoneZoneLogo.png'
@@ -22,40 +19,11 @@ class HomeHeader extends Component {
     }
 
     async componentDidMount() {
-        this.props.getAllUser();
         this.setState({
-            listProducts: this.props.listProducts
+
         })
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.listProducts !== this.props.listProducts) {
-            let dataSelect = this.builDataInputSelect(this.props.listProducts);
-            this.setState({
-                listProducts: this.props.listProducts,
-                listProductsSelect: dataSelect,
-            })
-        }
-        if (prevProps.isLoggedIn !== this.props.isLoggedIn) {
-            this.setState({
-                isLoggedIn: this.props.isLoggedIn,
-            })
-        }
-    }
-    builDataInputSelect = (inputData) => {
-        let result = [];
-        if (inputData && inputData.length > 0) {
-            inputData.map((item, index) => {
-                let object = {};
-                object.label = item.nameProduct
-                object.value = item.codeProduct;
-                result.push(object)
-            })
-
-        }
-        return result
-    }
-    changeLanguage(language) {
-        this.props.changeLanguageAppRedux(language);
 
     }
     handleLogin = () => {
@@ -122,12 +90,10 @@ class HomeHeader extends Component {
                                     <span>Giỏ hàng</span>
                                 </div>
                             </div>
-                            <div className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}><span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span></div>
-                            <div className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'}><span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span></div>
                             {/* bổ sung login + logout*/}
                             {
                                 isLoggedIn !== true ?
-                                    <div className='btn-login' onClick={() => this.handleLogin()}>Login </div>
+                                    <div className='btn-login' onClick={() => this.handleLogin()}>Đăng nhập </div>
                                     :
                                     <div className="btn btn-logout" onClick={processLogout}>
                                         <i className="fas fa-sign-out-alt"></i>
@@ -146,17 +112,12 @@ class HomeHeader extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn,
-        language: state.app.language,
         userInfo: state.user.userInfo,
-        listProducts: state.admin.products
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language)),
-        getAllUser: () => dispatch(actions.getAllUser()),
         processLogout: () => dispatch(actions.processLogout()),
     };
 };
