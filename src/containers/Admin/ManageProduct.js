@@ -13,7 +13,7 @@ class ManageProduct extends Component {
 
             listPhone: [
                 {
-                    name: 'SamSung',
+                    name: 'SamSung2',
                     code: '',
                     price: 100,
                     mainImage: 'https://cdn.tgdd.vn/Products/Images/42/307556/xiaomi-redmi-12-bac-thumb-600x600.jpg',
@@ -52,7 +52,7 @@ class ManageProduct extends Component {
                     name: 'Iphone',
                     code: '',
                     price: 200,
-                    mainImage: '',
+                    mainImage: 'https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg',
                     brandName: '',
                     categoryName: '',
                     detail: {
@@ -370,7 +370,6 @@ class ManageProduct extends Component {
 
 const mapStateToProps = state => {
     return {
-        language: state.app.language,
     };
 };
 

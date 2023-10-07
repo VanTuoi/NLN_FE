@@ -24,28 +24,6 @@
             margin-right: 10px;
         }
 
-        .language-vi {
-            cursor : pointer;
-            opacity: 0.7;
-
-            &.active {
-                opacity: 1;
-                color  : orange;
-            }
-        }
-
-        .language-en {
-            margin-left : 10px;
-            margin-right: 10px;
-            cursor      : pointer;
-            opacity     : 0.7;
-
-            &.active {
-                opacity: 1;
-                color  : #30d663;
-            }
-        }
-
         .btn-logout {
             color      : $common-text-color;
             line-height: 40px;

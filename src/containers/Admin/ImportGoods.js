@@ -17,7 +17,7 @@ class ImportGoods extends Component {
                 name: '',
                 code: '',
                 price: 0,
-                mainImage: '',
+                mainImage: 'https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg',
                 brandName: '',
                 categoryName: '',
                 detail: {

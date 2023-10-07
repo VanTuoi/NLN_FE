@@ -8,7 +8,7 @@ import './Header.scss';
 
 class Header extends Component {
     render() {
-        const { processLogout, language, userInfo } = this.props;
+        const { processLogout, userInfo } = this.props;
         return (
             <div className="header-container">
                 {/* thanh navigator */}

@@ -42,19 +42,8 @@ class HomeHeader extends Component {
         //product.id
         this.props.history.push(`/home/detail-product/${1}`);          // luuw nut quay ve
     }
-    handleChange = selectedOption => {
-        this.setState({
-            selectedOption
-        })
-        this.props.listUsers.map((item, index) => {
-            if (item.id === selectedOption.value) {
-                this.handleViewDetailProduct(item)
-                return;
-            }
-        })
-    }
     render() {
-        const { isLoggedIn, language, userInfo, processLogout } = this.props;
+        const { isLoggedIn, userInfo, processLogout } = this.props;
         let selectedOption = this.state.selectedOption;
         // console.log(userInfo)
         return (

@@ -1,254 +1,258 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
+import * as actions from "../../store/actions";
+import './ManageUser.scss'
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-import TableManageUser from './TableManageUser';
-import Select from "react-select"
 class ApproveOrder extends Component {
-
 
     constructor(props) {
         super(props);
         this.state = {
 
-            codeOrders: '',
-            listProduct: [
-                { nameProduct: '', codeProduct: '', price: '' },
-            ],
-            userId: '',
-            dateCrate: '',
-            dateApproval: '',
-            totalPrice: '',
-            actions: '',
+            listOrder: [
+                {
+                    name: 'Trần Văn A',
+                    sdt: '01356666',
+                    date: '10/6/2023 10:30',
+                    totalPrice: 200,
+                    state: 'Chờ duyệt',
+                    phone: [
+                        {
+                            name: 'SamSung',
+                            code: '123',
+                            color: 'Red',
+                            price: 100,
+                        },
+                        {
+                            name: 'SamSung',
+                            code: '123',
+                            color: 'Red',
+                            price: 100,
+                        },
+                    ]
+                },
+                {
+                    name: 'Trần Văn B',
+                    sdt: '013566669',
+                    date: '10/6/2023 10:30',
+                    totalPrice: 100,
+                    state: 'Chờ duyệt',
+                    phone: [
+                        {
+                            name: 'SamSung',
+                            code: '123',
+                            color: 'Red',
+                            price: 100,
+                        },
+                        {
+                            name: 'SamSung',
+                            code: '123',
+                            color: 'Red',
+                            price: 100,
+                        },
+                    ]
+                },
 
-            listOrders: [],
-            listOrdersSelect: [],
-            selectedOption: '',
-            showAllOrders: false,
+            ],
+
+            errMessage: '',
+            search: '',
         }
     }
 
     async componentDidMount() {
+        // API
         this.setState({
-            // actions: CRUD_ACTIONS.CREATE
+
         })
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
 
     }
-    builDataInputSelect = (inputData) => {
-        let result = [];
-        let language = this.props.language
-        if (inputData && inputData.length > 0) {
-            inputData.map((item, index) => {
-                let object = {};
-                object.label = item.userId;
-                object.value = item.codeOrder;
-                result.push(object)
-            })
-
-        }
-        return result
-    }
-
-    handleChange = selectedOption => {
-        this.setState({
-            selectedOption
-        })
-        this.props.listUsers.map((item, index) => {
-            if (item.id === selectedOption.value) {
-                this.handleEditUser(item)
-                return;
-            }
-        })
-    }
-    handleEditOrder = (order) => {
-        this.setState({
-            codeOrders: order.codeOrders,
-            listProduct: order.listProduct,
-            userId: order.userId,
-            dateCrate: order.dateCrate,
-            dateApproval: order.dateApproval,
-            totalPrice: order.totalPrice,
-
-            selectedOption: order.codeOrders,
-        })
-    }
-    handleCreateUser = () => {
-        // let isValid = this.checkValidateInput();
-        // if (!isValid === true) return;
-        // if (this.state.actions === CRUD_ACTIONS.CANCEL) {
-        //     this.setState({
-        //         codeOrders: '',
-        //         listProduct: [
-        //             { nameProduct: '', codeProduct: '', price: '' },
-        //         ],
-        //         userId: '',
-        //         dateCrate: '',
-        //         totalPrice: '',
-
-        //         actions: CRUD_ACTIONS.CANCEL,
-        //         selectedOption: ''
-        //     })
-        // }
-        // if (this.state.actions === CRUD_ACTIONS.EDIT) {
-        //     // fire redux cancel user
-        //     this.props.editUserRedux({
-        //         id: this.state.userEditId,
-        //         email: this.state.email,
-        //         password: this.state.password,
-        //         firstName: this.state.firstName,
-        //         lastName: this.state.lastName,
-        //         address: this.state.address,
-        //         phoneNumber: this.state.phoneNumber,
-        //         gender: this.state.gender,
-        //         avatar: this.state.avatar,
-        //     })
-        // }
-
+    handleAcceptOrder = () => {
 
     }
-    handleSaveUser = () => {
-        // let isValid = this.checkValidateInput();
-        // if (!isValid === true) return;
-        // if (this.state.actions === CRUD_ACTIONS.CREATE) {
-        //     // fire redux create user
-        //     this.props.createNewUser({
-        //         email: this.state.email,
-        //         password: this.state.password,
-        //         firstName: this.state.firstName,
-        //         lastName: this.state.lastName,
-        //         address: this.state.address,
-        //         phoneNumber: this.state.phoneNumber,
-        //         gender: this.state.gender,
-        //         avatar: this.state.avatar,
-        //     })
-        // }
+    handleAcceptOrder = (code) => {
+
+        // API
+    }
+    handleRefuseOrder = (code) => {
+        //API
 
     }
-    handleDeleteUser = () => {
-        this.props.deleteUserRedux(this.state.selectedOption.value);
-    }
-    checkValidateInput = () => {
-        let isValid = true;
-        // code
-        return isValid;
-    }
-    onChangeInput = (event, id) => {
-        let copyState = { ...this.state };
-        copyState[id] = event.target.value;
-        this.setState({
-            ...copyState
-        })
-    }
+    handleSearch = (event) => {
+        this.setState({ search: event.target.value });
+    };
 
-    handleShowAllUser = () => {
-        this.setState({
-            showAllUser: !this.state.showAllUser
-        })
-    }
     render() {
-        let selectedOption = this.state.selectedOption;
-        let showAllUser = this.state.showAllUser
-        let { codeOrders, listProduct, userId, dateCrate, dateApproval, totalPrice } = this.state
+        let { listOrder, search } = this.state
         return (
-            <div className='user-redux-container mx-5'>
-                <div className="text-center" >
-                    <div className='title m-4'>
-                        Duyệt đơn
+            <>
+                <div className='manage-product-container'>
+                    <div className="text-center" >
+                        <div className='title'>
+                            Duyệt đơn hàng
+                        </div>
                     </div>
-                    <table id="TableManageUser">
-                        <tbody>
-                            <tr>
-                                <th className='text-center col-1'>STT</th>
-                                <th className='text-center col-2'>Tên chủ đơn</th>
-                                <th className='text-center col-1'>Ngày tạo</th>
-                                <th className='text-center col-3'>Danh sách sản phẩm</th>
-                                <th className='text-center col-1'>Tổng tiền</th>
-                                <th className='text-center col-1'>Trạng thái</th>
-                                <th className='text-center col-1'>Hành động</th>
-                            </tr>
-                            <tr key="index">
-                                <td>
-                                    1
-                                </td>
-                                <td>Trần Văn An</td>
-                                <td>08:23 26/9/2023</td>
-                                <td>
-                                    <table className='col-12'>
-                                        <tbody>
-                                            <tr>
-                                                <td>Item 1</td>
-                                                <td>10</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Item 2</td>
-                                                <td>5</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Item 3</td>
-                                                <td>8</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                                <td>12.000.000đ</td>
-                                <td>
-                                    Chưa duyệt
-                                </td>
-                                <td>
-                                    <button
 
-                                        className="btn-tick"><i className="fas fa-check "></i></button>
-                                    <button
-                                        className="btn-delete"><i className="fas fa-trash"></i></button>
-                                </td>
+                    <div className=''>
+                        <div className='container'>
+                            <div className='row'>
+                                <input
+                                    className='col-3 m-3 form-control'
+                                    type="text"
+                                    placeholder="Nhập sđt đơn cần tìm..."
+                                    value={search}
+                                    onChange={this.handleSearch}
+                                />
+                                <table class="col-12 table">
+                                    <thead>
+                                        <tr className='text-center'>
+                                            <th scope="col">STT</th>
+                                            <th scope="col">Tên chủ đơn</th>
+                                            <th scope="col">SĐT</th>
+                                            <th scope="col">Ngày mua</th>
+                                            <th scope="col">Tổng tiền</th>
+                                            <th scope="col">Chi tiết</th>
+                                            <th scope="col" className='col-1'>Trạng thái</th>
+                                            <th scope="col">Hành động</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {listOrder && listOrder.length > 0 && listOrder.map((item, index) => {
+                                            return (
+                                                <>
+                                                    {item.sdt.indexOf(search) !== -1 ?
+                                                        <tr key={index}>
+                                                            <th scope="row" >{index + 1}</th>
+                                                            <th scope="row">
+                                                                <input
+                                                                    className='form-control'
+                                                                    value={item.name}
+                                                                    readOnly
+                                                                >
+                                                                </input>
+                                                            </th>
+                                                            <td>
+                                                                <input
+                                                                    type='phone'
+                                                                    className='form-control'
+                                                                    value={item.sdt}
+                                                                    readOnly
+                                                                >
+                                                                </input></td>
+                                                            <td>
+                                                                <input
+                                                                    type='text'
+                                                                    className='form-control'
+                                                                    value={item.date}
+                                                                    readOnly
+                                                                >
+                                                                </input></td>
+                                                            <td>
+                                                                <input
+                                                                    type='text'
+                                                                    className='form-control'
+                                                                    value={item.totalPrice}
+                                                                    readOnly
+                                                                >
+                                                                </input></td>
+                                                            <td>
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr className='text-center'>
+                                                                            <th className='col-1' scope="col">STT</th>
+                                                                            <th scope="col">Tên</th>
+                                                                            <th scope="col">Mã SP</th>
+                                                                            <th scope="col">Màu</th>
+                                                                            <th scope="col">Giá</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {item.phone && item.phone.length > 0 && item.phone.map((item, index_2) => {
+                                                                            return (
+                                                                                <>
+                                                                                    <tr key={index_2}>
+                                                                                        <th scope="row">
+                                                                                            {index_2 + 1}
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            <input
+                                                                                                readOnly
+                                                                                                className='form-control'
+                                                                                                value={item.name}
+                                                                                            >
+                                                                                            </input></td>
+                                                                                        <td>
+                                                                                            <input
+                                                                                                readOnly
+                                                                                                className='form-control'
+                                                                                                value={item.code}
+                                                                                            >
+                                                                                            </input></td>
+                                                                                        <td>
+                                                                                            <input
+                                                                                                readOnly
+                                                                                                type='text'
+                                                                                                className='form-control'
+                                                                                                value={item.color}
+                                                                                            >
+                                                                                            </input></td>
+                                                                                        <td>
+                                                                                            <input
+                                                                                                readOnly
+                                                                                                type='number'
+                                                                                                className='form-control'
+                                                                                                value={item.price}
+                                                                                            >
+                                                                                            </input></td>
+                                                                                    </tr>
 
-                            </tr>
-                            <tr key="index">
-                                <td>
-                                    1
-                                </td>
-                                <td>Trần Văn An</td>
-                                <td>08:23 26/9/2023</td>
-                                <td>
-                                    <table className='col-12'>
-                                        <tbody>
-                                            <tr>
-                                                <td>Item 1</td>
-                                                <td>10</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Item 2</td>
-                                                <td>5</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Item 3</td>
-                                                <td>8</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                                <td>12.000.000đ</td>
-                                <td>
-                                    Chưa duyệt
-                                </td>
-                                <td>
-                                    <button
+                                                                                </>
+                                                                            )
+                                                                        })
+                                                                        }
 
-                                        className="btn-tick"><i className="fas fa-check "></i></button>
-                                    <button
-                                        className="btn-delete"><i className="fas fa-trash"></i></button>
-                                </td>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                {item.state}
+                                                            </td>
+                                                            <td>
+                                                                <button className="btn m-1 btn-success"
+                                                                    onClick={() => this.handleAcceptOrder(item.sdt)}
+                                                                >Duyệt</button>
+                                                                <button className="btn m-1 btn-warning"
+                                                                    onClick={() => this.handleRefuseOrder(item)}
+                                                                >Xóa </button>
+                                                            </td>
+                                                        </tr >
+                                                        :
+                                                        <></>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                        }
+                                    </tbody>
+                                </table >
+                            </div >
+                        </div >
+                    </div >
 
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
+                    {
+                        this.state.isOpen === true &&
+                        <Lightbox
+                            mainSrc={this.state.previewImageURL}
+                            onCloseRequest={() => this.setState({ isOpen: false })}
+                        />
+                    }
+                </div >
+            </>
         )
     }
 

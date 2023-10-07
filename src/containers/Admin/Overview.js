@@ -7,6 +7,7 @@ import 'react-image-lightbox/style.css';
 import { Form } from 'react-bootstrap';
 import { Bar, Pie } from 'react-chartjs-2';
 import './Overview.scss'
+import Chart from 'chart.js/auto';
 class Overview extends Component {
 
     constructor(props) {

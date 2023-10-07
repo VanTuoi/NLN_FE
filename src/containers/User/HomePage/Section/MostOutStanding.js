@@ -7,210 +7,97 @@ import "slick-carousel/slick/slick-theme.css";
 import './MostOutStanding.scss'
 import { withRouter } from 'react-router';
 import MOS_product_1 from '../../../../assets/outstanding_products/shopping.webp';
+
+
+import MoonLoader from "react-spinners/MoonLoader";
+
 class MostOutStanding extends Component {
 
-    handleViewDetailProduct = (product) => {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        }
+    }
+    handleAddItemToCart = (id) => {
+        alert(id)
+        // userInfo.token
+        // API
+    }
+
+    handleViewDetailProduct = (id) => {
         //product.id
-        this.props.history.push(`/home/detail-product/${1}`);          // luuw nut quay ve
+        this.props.history.push(`/home/detail-product/${id}`);          // luuw nut quay ve
     }
     render() {
+        // let { listPhone, loading } = this.state
         let settings = this.props.settings;
+        let listPhone = this.props.listPhone
         settings.slidesToShow = 5;
         return (
             <div className='section-share'>
                 <div className='section-container MostOutStanding'>
                     <div className='section-header'>
                         <span className='title-section title-section-MosTOutStanding'>&#42; Nổi bật nhất &#42;</span>
-                        <button className='btn-section'>Tất cả sản phẩm</button>
+                        <button className='btn-section'
+                        // onClick={() => this.props.handleLoading(true)}
+                        >Tất cả sản phẩm</button>
                     </div>
                     <div className='section-body'>
+
                         <Slider {...settings}>
-                            <div className='section-customize '>
-                                <div className="bg-image ">
-                                    <img alt="" src={MOS_product_1} style={{}} />
-                                </div>
-                                <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 1000đ</label>
-                                <h3 onClick={() => this.handleViewDetailProduct()}>iPhone 15 128GB </h3>
-                                <div className='price'>
-                                    <strong>20.999.000&#8363;</strong>
-                                </div>
-                                <div className='ratingresult'>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <span>9999 đánh giá</span>
-                                </div>
-                                <div className='tool-tip-1'>
-                                    <button type='button' className='btn btn-primary add-product' data-toggle="tooltip" title='Thêm vào giỏ hàng' data-trigger="click" data-boundary="window" data-placement="left" >
-                                        +
-                                    </button>
-                                </div>
-                                {/* <div className='section-content'>Sản phẩm  1</div> */}
-                            </div>
-                            <div className='section-customize'>
-                                <div className="bg-image">
-                                    <img alt="" src={MOS_product_1} style={{}} />
-                                </div>
-                                <label className='giareonline' >Giá rẻ online</label>
-                                <h3 onClick={() => this.handleViewDetailProduct()}>Huawei Nova 2i </h3>
-                                <div className='price'>
-                                    <strong>3.990.000&#8363;</strong>
-                                    <span>4.490.000&#8363;</span>
-                                </div>
-                                <div className='ratingresult'>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='far fa-star star-empty'></i>
-                                    <span>804 đánh giá</span>
-                                </div>
-                                <div className='tool-tip-1'>
-                                    <button type='button' className='btn btn-primary add-product' data-toggle="tooltip" title='Thêm vào giỏ hàng' data-trigger="click" data-boundary="window" data-placement="left" >
-                                        +
-                                    </button>
-                                </div>
-                                {/* <div className='section-content'>Sản phẩm  2</div> */}
-                            </div>
-                            <div className='section-customize'>
-                                <div className="bg-image "> <img alt="" src={MOS_product_1} style={{}} /></div>
-                                <label className='moiramat' >Mới ra mắt</label>
-                                <h3 onClick={() => this.handleViewDetailProduct()}>Xiaomi Redmi 5 Plus 4GB </h3>
-                                <div className='price'>
-                                    <strong>4.790.000&#8363;</strong>
-
-                                </div>
-                                <div className='ratingresult'>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='far fa-star star-empty'></i>
-                                    <span>347 đánh giá</span>
-                                </div>
-                                <div className='tool-tip-1'>
-                                    <button type='button' className='btn btn-primary add-product' data-toggle="tooltip" title='Thêm vào giỏ hàng' data-trigger="click" data-boundary="window" data-placement="left" >
-                                        +
-                                    </button>
-                                </div>
-                                {/* <div className='section-content'>Sản phẩm  3</div> */}
-                            </div>
-                            <div className='section-customize'>
-                                <div className="bg-image "> <img alt="" src={MOS_product_1} style={{}} /></div>
-                                {/* <div className='section-content'>Sản phẩm  4</div> */}
-                                <h3 onClick={() => this.handleViewDetailProduct()}>Xiaomi Redmi 5</h3>
-                                <div className='price'>
-                                    <strong>4.790.000&#8363;</strong>
-
-                                </div>
-                                <div className='ratingresult'>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='far fa-star star-empty'></i>
-                                    <span>3 đánh giá</span>
-                                </div>
-                                <div className='tool-tip-1'>
-                                    <button type='button' className='btn btn-primary add-product' data-toggle="tooltip" title='Thêm vào giỏ hàng' data-trigger="click" data-boundary="window" data-placement="left" >
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                            <div className='section-customize '>
-                                <div className="bg-image ">
-                                    <img alt="" src={MOS_product_1} style={{}} />
-                                </div>
-                                <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 1000đ</label>
-                                <h3 onClick={() => this.handleViewDetailProduct()}>iPhone 15 128GB </h3>
-                                <div className='price'>
-                                    <strong>20.999.000&#8363;</strong>
-                                </div>
-                                <div className='ratingresult'>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <span>9999 đánh giá</span>
-                                </div>
-                                <div className='tool-tip-1'>
-                                    <button type='button' className='btn btn-primary add-product' data-toggle="tooltip" title='Thêm vào giỏ hàng' data-trigger="click" data-boundary="window" data-placement="left" >
-                                        +
-                                    </button>
-                                </div>
-                                {/* <div className='section-content'>Sản phẩm  1</div> */}
-                            </div>
-                            <div className='section-customize '>
-                                <div className="bg-image ">
-                                    <img alt="" src={MOS_product_1} style={{}} />
-                                </div>
-                                <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 1000đ</label>
-                                <h3 onClick={() => this.handleViewDetailProduct()}>iPhone 15 128GB </h3>
-                                <div className='price'>
-                                    <strong>20.999.000&#8363;</strong>
-                                </div>
-                                <div className='ratingresult'>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <span>9999 đánh giá</span>
-                                </div>
-                                <div className='tool-tip-1'>
-                                    <button type='button' className='btn btn-primary add-product' data-toggle="tooltip" title='Thêm vào giỏ hàng' data-trigger="click" data-boundary="window" data-placement="left" >
-                                        +
-                                    </button>
-                                </div>
-                                {/* <div className='section-content'>Sản phẩm  1</div> */}
-                            </div>
-                            <div className='section-customize '>
-                                <div className="bg-image ">
-                                    <img alt="" src={MOS_product_1} style={{}} />
-                                </div>
-                                <label className='giamgia' ><i className="fas fa-bolt"></i> Giảm giá 1000đ</label>
-                                <h3 onClick={() => this.handleViewDetailProduct()}>iPhone 15 128GB </h3>
-                                <div className='price'>
-                                    <strong>20.999.000&#8363;</strong>
-                                </div>
-                                <div className='ratingresult'>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <i className='fa fa-star'></i>
-                                    <span>9999 đánh giá</span>
-                                </div>
-                                <div className='tool-tip-1'>
-                                    <button type='button' className='btn btn-primary add-product' data-toggle="tooltip" title='Thêm vào giỏ hàng' data-trigger="click" data-boundary="window" data-placement="left" >
-                                        +
-                                    </button>
-                                </div>
-                                {/* <div className='section-content'>Sản phẩm  1</div> */}
-                            </div>
+                            {
+                                listPhone && listPhone.length > 0 && listPhone.map((item, index) => {
+                                    return (
+                                        <>
+                                            <div className='section-customize '>
+                                                <div className="bg-image ">
+                                                    <img alt="" src={item.imgPhone} style={{}} />
+                                                </div>
+                                                <label className={item.type} ><i className="fas fa-bolt"></i>{item.giamgia}</label>
+                                                <h3 className='namePhone' onClick={() => this.handleViewDetailProduct(item.code)}>{item.namePhone}</h3>
+                                                <div className='price'>
+                                                    <strong>{item.price}&#8363;</strong>
+                                                </div>
+                                                <div className='ratingresult'>
+                                                    <i className='fa fa-star'></i>
+                                                    <i className='fa fa-star'></i>
+                                                    <i className='fa fa-star'></i>
+                                                    <i className='fa fa-star'></i>
+                                                    <i className='fa fa-star'></i>
+                                                    <span className='vote'>{item.vote}</span>
+                                                </div>
+                                                <div className='tool-tip-1'>
+                                                    <button
+                                                        onClick={() => this.handleAddItemToCart(item.code)}
+                                                        type='button' className='btn btn-primary add-product' data-toggle="tooltip" title='Thêm vào giỏ hàng' data-trigger="click" data-boundary="window" data-placement="left" >
+                                                        +
+                                                    </button>
+                                                </div>
+                                                {/* <div className='section-content'>Sản phẩm  1</div> */}
+                                            </div>
+                                        </>
+                                    )
+                                })
+                            }
                         </Slider>
                     </div>
 
 
-                </div>
-            </div>
+                </div >
+            </div >
         );
     }
-
 }
 
 const mapStateToProps = state => {
     return {
-
+        userInfo: state.user.userInfo
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-
     };
 };
 

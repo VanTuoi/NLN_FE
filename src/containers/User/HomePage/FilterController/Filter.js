@@ -25,65 +25,129 @@ import company_Motorola from '../../../../assets/Companys/Motorola.jpg'
 
 
 class Filter extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            select: '',
+            listPhone: [
+                {
+                    giamgia: 'Giảm giá 1000đ',
+                    type: 'giamgia',
+                    namePhone: 'iPhone 15 128GB',
+                    imgPhone: '',
+                    code: '1',
+                    price: '20.999.000',
+                    ratingresult: '',
+                    vote: '9999 đánh giá'
+                },
+                {
+                    giamgia: 'Giảm giá 1000đ',
+                    type: 'giamgia',
+                    namePhone: 'iPhone 15 128GB',
+                    imgPhone: '',
+                    code: '1',
+                    price: '20.999.000',
+                    ratingresult: '',
+                    vote: '9999 đánh giá'
+                },
+                {
+                    giamgia: 'Giảm giá 1000đ',
+                    type: 'giamgia',
+                    namePhone: 'iPhone 15 128GB',
+                    imgPhone: '',
+                    code: '1',
+                    price: '20.999.000',
+                    ratingresult: '',
+                    vote: '9999 đánh giá'
+                },
+                {
+                    giamgia: 'Giảm giá 1000đ',
+                    type: 'giamgia',
+                    namePhone: 'iPhone 15 128GB',
+                    imgPhone: '',
+                    code: '1',
+                    price: '20.999.000',
+                    ratingresult: '',
+                    vote: '9999 đánh giá'
+                },
+            ]
+        }
+    }
 
+    handleSelect = (value) => {
+        if (this.state.select === '' || this.state.select !== value) {
+            this.setState({
+                select: value
+            })
+
+        }
+        else {
+            this.setState({
+                select: ''
+            })
+        }
+    }
     render() {
+        let { listPhone } = this.state
         return (
-            <div className='filter-container'>
-                <div className='child-container-top'>
-                    <img src={imageblackFriday} alt='image black Friday'></img>
-                </div>
-                <div className='child-container-bottom group flexContain'>
-                    <a href='#'>
-                        <img alt=" " src={company_Apple}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Samsung}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Oppo}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Noki}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Huawei}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Apple}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Xixaomi}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Realme}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Vivo}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Philips}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Mobell}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Mobiistar}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Itel}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Coolpad}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_HTC}></img>
-                    </a>
-                    <a href='#'>
-                        <img alt=" " src={company_Motorola}></img>
-                    </a>
+            <>
+                <div className='row filter-container'>
+                    <div className='child-container-top'>
+                        <img src={imageblackFriday} alt='image black Friday'></img>
+                    </div>
+                    <div className='child-container-bottom group flexContain'>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Apple')} src={company_Apple}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Samsung')} src={company_Samsung}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Oppo')} src={company_Oppo}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Noki')} src={company_Noki}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Huawei')} src={company_Huawei}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Apple')} src={company_Apple}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Xixaom')} src={company_Xixaomi}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Realme')} src={company_Realme}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Vivo')} src={company_Vivo}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Philips')} src={company_Philips}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Mobell')} src={company_Mobell}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Mobiista')} src={company_Mobiistar}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Itel')} src={company_Itel}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Coolpad')} src={company_Coolpad}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('HTC')} src={company_HTC}></img>
+                        </a>
+                        <a href='#'>
+                            <img alt=" " onClick={() => this.handleSelect('Motorola')} src={company_Motorola}></img>
+                        </a>
 
+                    </div>
                 </div>
-            </div>
+            </>
         );
     }
 

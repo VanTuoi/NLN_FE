@@ -159,7 +159,7 @@ class InforUser extends Component {
                             <tr>
                                 <td>1</td>
                                 <td className='noPadding imgHide'>
-                                    <a target='_blank' href='#' title='Xem chi tiết'>
+                                    <a target='_blank' href='#123' title='Xem chi tiết'>
                                         Nokia black future
                                         <img alt='' src='	https://cdn.tgdd.vn/Products/Images/42/22701/dien-thoai-di-dong-Nokia-1280-dienmay.com-l.jpg' />
                                     </a>

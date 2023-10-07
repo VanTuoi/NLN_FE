@@ -14,6 +14,7 @@ const appReducer = (state = initialState, action) => {
                 userInfo: action.userInfo
             }
 
+
         case actionTypes.USER_LOGIN_FAIL:
             return {
                 ...state,

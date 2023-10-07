@@ -103,7 +103,7 @@ class Register extends Component {
         const phonenumbercorrect = /^(?:\+?84|0)(?:\d{9}|\d{10})$/;
         let phonenumber = event.target.value;
         if (event.target.value !== '') {
-            if (phonenumbercorrect.test(phonenumber) == true) {
+            if (phonenumbercorrect.test(phonenumber) === true) {
                 this.setState({
                     phonenumber: event.target.value,
                     checkphonenumber: true,
@@ -133,7 +133,7 @@ class Register extends Component {
         const emailcorrect = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
         let email = event.target.value;
         if (event.target.value !== '') {
-            if (emailcorrect.test(email) == true) {
+            if (emailcorrect.test(email) === true) {
                 this.setState({
                     email: event.target.value,
                     checkemail: true,
@@ -351,7 +351,7 @@ class Register extends Component {
 }
 const mapStateToProps = state => {
     return {
-        language: state.app.language
+
     };
 };
 const mapDispatchToProps = dispatch => {

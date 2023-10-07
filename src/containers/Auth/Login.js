@@ -56,23 +56,35 @@ class Login extends Component {
     }
 
     handleLogin = async () => {
-        // this.props.history.push(`/home/homepage`);
-        console.log(this.state)
+
         this.setState({
             errMessage: '',
         })
         try {
-            let data = await LoginServiceUser(this.state.phonenumber, this.state.password);
-            if (data && data.errCode !== 0) {
-                this.setState({
-                    errMessage: data.message,
+            fetch('http://localhost:8080/api/v1/user/login', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: this.state.phonenumber,
+                    password: this.state.password
                 })
-            }
-            if (data && data.errCode === 0) {
-                this.props.userLoginSuccess(data.user);
-                this.props.adminLoginSuccess(data.user);
-                console.log('login success');
-            }
+            }).then(res => {
+                return res.json();
+            }).then(data => {
+                if (data.message) {
+                    this.setState({
+                        errMessage: data.message,
+                    })
+                }
+                // store user Information in session
+                // localStorage.setItem("token", data.token)
+
+                // use redux
+                this.props.userLoginSuccess(data.token);
+                window.location.href = "http://localhost:3000"
+            })
         } catch (error) {
             if (error.response) {
                 if (error.response.data) {
@@ -159,7 +171,7 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
-        language: state.app.language
+        userInfo: state.user.userInfo
     };
 };
 
@@ -167,7 +179,6 @@ const mapDispatchToProps = dispatch => {
     return {
         navigate: (path) => dispatch(push(path)),
         userLoginSuccess: (userInfo) => dispatch(actions.userLoginSuccess(userInfo)),
-        adminLoginSuccess: (userInfo) => dispatch(actions.adminLoginSuccess(userInfo)),
     };
 };
 

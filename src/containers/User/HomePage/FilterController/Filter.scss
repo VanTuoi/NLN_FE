@@ -1,34 +1,34 @@
 .filter-container {
-    width: 100%;
+    width    : 100%;
     // height: 150px;
 
     .child-container-top {
-        width: 100%;
-        margin: 0 20px;
+        width    : 100%;
+        margin   : 0 20px;
         // border: 1px solid rgb(0, 255, 157);
     }
 
     .child-container-bottom {
-        width: 100%;
+        width    : 100%;
         // height: 100px;
-        margin: 10px 0 30px;
+        margin   : 10px 0 30px;
 
 
 
 
         a {
-            border: 2px solid #fff;
-            height: 40px;
-            line-height: 40px;
+            border             : 2px solid #fff;
+            height             : 40px;
+            line-height        : 40px;
             transition-duration: .2s;
-            text-decoration: none;
-            color: #222;
+            text-decoration    : none;
+            color              : #222;
 
 
 
             &:hover {
-                cursor: pointer;
-                border: 2px solid #ddd;
+                cursor   : pointer;
+                border   : 2px solid #ddd;
                 transform: scale(1.2);
             }
         }
@@ -37,11 +37,11 @@
 
 
         img {
-            max-height: 30px;
-            vertical-align: middle;
-            margin-top: -3px;
+            max-height          : 30px;
+            vertical-align      : middle;
+            margin-top          : -3px;
             overflow-clip-margin: content-box;
-            overflow: clip;
+            overflow            : clip;
 
         }
     }
@@ -58,21 +58,21 @@
         &::after {
             content: "";
             display: table;
-            clear: both;
+            clear  : both;
         }
     }
 
     .flexContain {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-orient: horizontal;
+        display              : -ms-flexbox;
+        display              : flex;
+        -ms-flex-wrap        : wrap;
+        flex-wrap            : wrap;
+        -webkit-box-orient   : horizontal;
         -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
+        -ms-flex-direction   : row;
+        flex-direction       : row;
+        -webkit-box-pack     : center;
+        -ms-flex-pack        : center;
+        justify-content      : center;
     }
 }
